@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+<!--------------- CAPA --------------->
+    <section id="header">
+            <header id="menu">
+                <h2 id="menuText">Menu</h2>
+                <nav>
+                    <ul id="list">
+                        <li><a href="index.html">Intro</a></li>
+                        <li><a href="front.html">Front End</a></li>
+                        <li><a href="back.html" id="active">Back End</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="cover-circles">
+                <div id="cover-text">
+                    <h1>Back End</h1>
+                    <p id="subtitle">Linguagem, banco de dados e páginas dinâmicas</p>
+                </div>
+            </div>
+    </section>
+<!--------------- INTRO --------------->
+    <section class="container">
+        <h2>PHP</h2>
+        <p>Existem diversas linguagens para trabalhar com o back end, mas, aqui, veremos um pouco do PHP. Essa sigla, hoje, significa PHP Hypertext Preprocessor (isso mesmo, o P é de PHP), mas originalmente significava Personal Home Page.</p>
+        <p>Essa linguagem roda no server-side, lembra? Seu navegador não a interpreta, mas uma página HTML personalizada é criada a partir dela (e essa, sim, o browser compila em formato visual).</p>
+        <p>Então, para aprendermos um pouco sobre, transformaremos nosso computador em "metade cliente e metade servidor". Para isso baixaremos o pacote XAMPP (ele vem com algumas funcionalidades que precisaremos, como o Apache (que é um servidor), o banco de dados MySQL e um interpretador PHP).</p>
+        <img id="xampp" src="images/xampp-icon.png"/>
+        <figcaption class="caption">XAMPP</figcaption>
+        <p>Após instalado o pacote, temos que abri-lo, ativar as funções Apache e MySQL (clicando em Start) e aguardar até ficar verde. Esse processo precisa ser feito sempre que quisermos abrir um documento que está salvo para rodar com o XAMPP.</p>
+        <img class="start-xampp" src="images/start-xampp.png"/>
+        <p>Salvaremos as pastas e arquivos que criarmos para trabalhar com o PHP em Disco Local (C:) > xampp > htdocs. Abriremos eles no browser, mas pesquisando por: localhost://nome-da-pasta-ou-arquivo-nao-esqueca-da-extensao. Esse localhost se refere ao seu próprio computador, onde os arquivos estão salvos; funciona como um "servidor offline" para o qual você vai solicitar a página ou pasta (ele serve especialmente para testes de desenvolvedores).</p>
+        <h2>Banco de dados</h2>
+        <p>Como já sabemos, o PHP conecta uma página HTML a um banco de dados; assim, informações do front end podem ser salvas no data base e a página pode ser dinamicamente atualizada quando o data base também for.</p>
+        <p>No mundo físico existem armários que guardam pastas que guardam fichas. Em programação, os armários são bancos de dados, as pastas são tabelas e as fichas são registros (compostos por campos), e tudo é digital.</p>
+        <p>Aqui, usaremos o banco de dados MySQL — SQL significa Structured Query Language ou Linguagem de Consulta Estruturada.</p>
+    </section>
+<!--------------- EXEMPLO --------------->
+    <section class="container">
+        <h2>Exemplo</h2>
+        <p>Faremos um formulário de cadastro. Primeiro o HTML 👇</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Formulário e banco de dados&lt;/title&gt;
+  &lt;link href="form-style.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="box"&gt;
+    &lt;form action="enviar.php" method="POST"&gt; <span class="color-purple">&lt;!-- quando o formulário for enviado a ação das informações irem para "enviar.php" e o que mais tiver nesse arquivo serão executados --&gt;</span>
+      &lt;fieldset&gt; <span class="color-purple">&lt;!-- agrupa elementos dentro de um formulário --&gt;</span>
+        &lt;legend&gt;&lt;b&gt;Formulário de Cadastro&lt;/b&gt;&lt;/legend&gt; <span class="color-purple">&lt;!-- é uma legenda usada junto com a tag &lt;fieldset&gt;; tag &lt;b&gt; = bold ou negrito --&gt;</span>
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="text" name="nome" id="nome" class="inputUser" required&gt; <span class="color-purple">&lt;!-- &lt;input&gt; proporciona interatividade ao formulário, pois permite que o usuário o complete com suas informações --&gt;</span>
+          &lt;label for="nome" class="label-input"&gt;Nome Completo&lt;/label&gt; <span class="color-purple">&lt;!-- &lt;label&gt; = etiqueta ou rótulo do input --&gt;</span>
+        &lt;/div&gt; 
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="text" name="email" id="email" class="inputUser" required&gt; <span class="color-purple">&lt;!-- required = requerido ou obrigatório para o usuário preencher --&gt;</span>
+          &lt;label for="email" class="label-input"&gt;Email&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="number" name="telefone" id="telefone" class="inputUser" required&gt;
+          &lt;label for="telefone" class="label-input"&gt;Telefone&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+        &lt;p&gt;Sexo:&lt;/p&gt;
+        &lt;input type="radio" name="sexo" id="feminino" value="F" required&gt; <span class="color-purple">&lt;!-- &lt;input type="radio"&gt; é aquele que temos que preencher clicando em apenas uma das opções; todos os botões radio que têm o mesmo name indicam que são opções sobre a mesma coisa, então, só uma delas pode ser escolhida --&gt;</span>
+        &lt;label for="sexo"&gt;Feminino&lt;/label&gt;
+        &lt;input type="radio" name="sexo" id="masculino" value="M" required&gt; <span class="color-purple">&lt;!-- value = valor daquele input radio, é como a sua escolha ficará salva se você escolher aquela opção --&gt;</span>
+        &lt;label for="sexo"&gt;Masculino&lt;/label&gt;
+        &lt;input type="radio" name="sexo" id=outro" value="O" required&gt;
+        &lt;label for="sexo"&gt;Outro&lt;/label&gt;
+        &lt;br&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label for="data_nascimento"&gt;&lt;b&gt;Data de Nascimento:&lt;/b&gt;&lt;/label&gt;
+        &lt;input type="date" name="data_nascimento" id="data_nascimento" required&gt;
+        &lt;br&gt;&lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="text" name="cidade" id="cidade" class="inputUser" required&gt;
+          &lt;label for="cidade" class="label-input"&gt;Cidade&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="text" name="estado" id="estado" class="inputUser" required&gt;
+          &lt;label for="estado" class="label-input"&gt;Estado&lt;/label&gt;
+         &lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class="inputBox"&gt;
+          &lt;input type="text" name="endereco" id="endereco" class="inputUser" required&gt;
+          &lt;label for="endereco" class="label-input"&gt;Endereço&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" name="submit" id="submit"&gt; <span class="color-purple">&lt;!-- &lt;input type="submit"&gt; = botão enviar --&gt;</span>
+      &lt;/fieldset&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p>Adicionaremos o CSS em um outro arquivo 👇</p>
+
+        <pre><code>body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, #dd6b01, #fa1693);
+}
+.box {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);     
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 15px;
+}
+fieldset {
+  border: 3px solid white;
+}
+legend {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+}
+.inputBox {
+  position: relative;
+}
+.inputUser { 
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none; <span class="color-purple">/* significa contorno; adiciona mais uma borda ao elemento quando ele está selecionado */</span>
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 2px;
+}
+.label-input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none; <span class="color-purple">/* controla como aquele elemento responderá aos eventos do mouse do usuário */</span>
+  transition: .5s; <span class="color-purple">/* define a duração da transição entre dois estados de um elemento; é um poderoso recurso para a criação de efeitos de animação */</span>
+}
+.inputUser:focus ~ .label-input,
+.inputUser:valid ~ .label-input {
+  top: -20px;
+  font-size: 12px;
+  color: rgb(194, 190, 190);
+}
+#data_nascimento {
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+#submit {
+  background-image: linear-gradient(to right, #dd6b01, #fa1693);
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#submit:hover {
+  background-image:linear-gradient(to right, #c46002, #c71978);
+  color: rgb(204, 204, 204);
+}</code></pre>
+
+        <p>O resultado será esse:</p>
+        <img class="form" src="images/form-ex.png"/>
+        <figcaption>Se você seguiu o exemplo e chegou nesse resultado, experimente clicar nos campos para ver as animações e enviar o formulário deixando algo em branco (um aviso será exibido)!</figcaption>
+        <br><br><br>
+        <p>Então, criaremos um banco de dados e uma tabela. Vamos ao  XAMPP > MySQL > Admin.</p>
+        <img class="start-xampp" src="images/admin-xampp.png"/>
+        <p>É  só criar um novo banco, uma nova tabela e configurar os campos de acordo com o que há para ser preenchido no formulário. Depois, ambos (banco e tabela) serão exibidos na barra lateral.</p>
+        <img id="sideTable-xampp" src="images/sideTable-xampp.png"/>
+        <div id="tipos">
+            <h2 class="tipos-título">Um pouco sobre os tipos no MySQL:</h2>
+            <p class="roxo">Numéricos</p>
+            <p class="texto-junto">• SMALLINT — número inteiro pequeno;</p>
+            <p  class="texto-junto">• MEDIUMINT — número inteiro de tamanho médio;</p> 
+            <p class="texto-junto">• INT — número inteiro de tamanho comum;</p> 
+            <p class="texto-junto">• BIGINT — número inteiro de tamanho grande;</p>
+            <p>• DECIMAL — número decimal.</p>
+            <p class="roxo">Data/Tempo</p>
+            <p class="texto-junto">• DATE — data no formato 'CCYY-MM-DD'. Por exemplo 1985-11-25 (ano-mês-dia). O 'CC' se refere aos dois dígitos do século (century, em inglês);</p> 
+            <p class="texto-junto">• TIME — horário;</p>
+            <p>• YEAR — ano.</p>
+            <p class="roxo">Strings (cadeias de caracteres)</p>
+            <p class="texto-junto">• CHAR — string de tamanho fixo. Por exemplo, se o tamanho é 30, mas a palavra preenchida no formulário tem menos letras, ele vai completar com espaços até dar 30;</p> 
+            <p class="texto-junto">• VARCHAR — uma string de tamanho variável. Aqui, 30 letras significa até 30;</p>
+            <p class="texto-junto">• TEXT — string pequena;</p>
+            <p class="texto-junto">• MEDIUMTEXT — string de tamanho comum;</p>
+            <p class="texto-junto">• LONGTEXT — string de tamanho grande.</p>
+        </div>
+        <p>Agora, precisamos conectar o front com o banco de dados; então vamos criar o caminho usando PHP — para isso crie um arquivo separado com a extensão <code>.php</code> — 👇</p>
+
+        <pre><code><span class="color-purple">// o comentário em PHP é igual em JS</span>
+
+&lt;?php <span class="color-purple">// é assim que se abre o PHP</span>
+
+<span class="color-purple">// $ = variável em PHP</span>
+
+  $hostname = "localhost"; <span class="color-purple">// nesta variável estamos guardando o nome do nosso servidor offline, o localhost</span>
+  $usuario = "root"; <span class="color-purple">// por padrão,  nosso nome de usuário é root</span>
+  $senha = ""; <span class="color-purple">// não temos senha no MySQL</span>
+  $bd = "cadastro";
+            
+  $conexao = new mysqli($hostname, $usuario, $senha, $bd); 
+            
+?&gt; <span class="color-purple">// é assim que se fecha o PHP</span></code></pre>
+
+        <p>No nosso código HTML, você pode ver que o formulário tem a ação de levar o usuário à página "enviar.php" após o botão enviar ser pressionado. Então, vamos criar esta página e aplicar a conexão que acabamos de criar 👇</p>
+
+        <pre><code>
+&lt;?php
+
+  if (isset($_POST["submit"])) { 
+  <span class="color-purple">/* if = se
+     isset verifica se uma variável existe e seu valor não é igual a null (nulo). 
+     No caso, isset vai verificar se as informações foram enviadas através do método post, quando clicaram no submit 
+     Se isso for verdade, as linhas de código a seguir serão executadas
+  */</span>
+            
+  include_once("conexão.php");
+  <span class="color-purple">/* aqui estamos incluindo a conexão que criamos no outro arquivo
+     para jogar as informações no banco de dados:
+ */</span> 
+
+  $nome = $_POST["nome"]; <span class="color-purple">// cada variável está recebendo, pelo método post, as informações que foram inseridas nos inputs que têm aqueles nomes (que estão entre aspas (""))</span>
+  $email = $_POST["email"];
+  $telefone = $_POST["telefone"];
+  $sexo = $_POST["sexo"];
+  $dataNasc = $_POST["data_nascimento"];
+  $cidade = $_POST["cidade"];
+  $estado = $_POST["estado"];
+  $endereco = $_POST["endereco"];
+                
+  $result = mysqli_query($conexao, "INSERT INTO cadastrosteste (nome, email, telefone, sexo, data_nasc, cidade, estado, endereco) VALUES ('$nome' '$email', 
+  '$telefone', '$sexo', '$dataNasc', '$cidade', '$estado', '$endereco')");
+  <span class="color-purple">// aqui estamos inserindo em cada campo da tabela cadastrosteste seus respectivos valores, que estão guardados nas variáveis que acabamos de criar</span>
+}
+            
+?&gt;</code></pre>
+
+        <p>Você também pode fazer um HTML dentro deste PHP (abrindo todas as tags normalmente) com uma mensagem do tipo: "Cadastrado(a) com sucesso!" para o usuário; e também pode fazer um CSS interno para esse HTML.</p>
+        <p>Atenção: você pode escrever HTML e CSS dentro de arquivos <code>.php</code>, mas não o contrário!</p>
+        <p>Pra finalizar, vamos criar uma página que faz outro caminho: puxa as informações que já tem no banco de dados até o front end. Será uma página de listagem 👇</p>
+
+        <pre><code>&lt;?php
+
+  include("conexão.php");
+
+  $consulta = "SELECT * FROM cadastrosteste";
+
+  $result = $conexao -> query($consulta);
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gtListagem do Banco da Dados&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      background: linear-gradient(to right, #dd6b01, #fa1693);
+    }
+    #título {
+      text-align: center;
+    }
+    #tabela {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse; <span class="color-purple">/* collapse tira uma das bordas que teria na tabela por padrão, deixando todas as células compartilhando uma borda única */</span>
+    }
+    th, td {
+      padding: 10px;
+    }
+    th {
+      background: rgb(228, 227, 227);
+      color: black;
+    }
+    tr {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="título"&gt;Listagem do Data Base cadastro - Tabela cadastrosteste&lt;/h1&gt;
+  &lt;br&gt;
+  &lt;table id="tabela" align="center"&gt;
+    &lt;thead&gt; <span class="color-purple">&lt;!-- table head ou cabeçalho da tabela --&gt;</span>
+      &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt; <span class="color-purple">&lt;!-- &lt;th&gt; = table header ou célula de cabeçalho; é a mesma coisa que a tag &lt;td&gt;, mas deixa o texto em negrito --&gt;</span>
+        &lt;th&gt;Nome&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Telefone&lt;/th&gt;
+        &lt;th&gt;Sexo&lt;/th&gt;
+        &lt;th&gt;Data de Nascimento&lt;/th&gt;
+        &lt;th&gt;Cidade&lt;/th&gt;
+        &lt;th&gt;Estado&lt;/th&gt;
+        &lt;th&gt;Endereço&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt; <span class="color-purple">&lt;!-- table body ou corpo da tabela --&gt;</span>
+      &lt;tr&gt;
+        &lt;?php 
+          while ($user_data = $result -> fetch_array( )) {
+          <span class="color-purple">/* while = enquanto
+             esse comando vai buscar (fetch) os arrays (um tipo de dado) da variável $result (que faz o link com uma tabela específica no banco de dados)
+             A variável $user_data é o que usaremos em vez de escrever a função toda de novo, de novo e de novo...
+          */</span> 
+        ?&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;?php echo $user_data ["id"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?php echo $user_data ["nome"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?php echo $user_data ["email"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt&lt;?php echo $user_data ["telefone"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt&lt;?php echo $user_data ["sexo"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt&lt;?php echo date("d/m/Y", strtotime ($user_data ["data_nasc"])); ?&gt;&lt;/td&gt;
+          <span class="color-purple">&lt;!-- aqui, antes de chamarmos o array específico pra data, arrumamos a forma como ela vai aparecer (day/month/Year) porque lá na tabela do bd está no formato americano --&gt;</span>
+          &lt;td&gt;&lt;?php echo $user_data ["cidade"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?php echo $user_data ["estado"]; ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?php echo $user_data ["endereco"]; ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;?php 
+          } 
+        ?&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p>E vamos testar o funcionamento preenchendo o formulário e atualizando a página de listagem para ver as informações lá:</p>
+        <img class="form" src="images/form-test.png"/>
+        <br><br><br><br>
+        <img class="form" id="fundo-final" src="images/form-listagem.png"/>
+    </section>

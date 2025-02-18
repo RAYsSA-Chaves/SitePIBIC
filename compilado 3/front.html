@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<!--------------- CAPA --------------->
+    <section id="header">
+        <header id="menu">
+            <h2 id="menuText">Menu</h2>
+            <nav>
+                <ul id="list">
+                    <li><a href="index.html">Intro</a></li>
+                    <li><a href="front.html" id="active">Front End</a></li>
+                    <li><a href="back.html">Back End</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="cover-circles">
+            <div id="cover-text">
+                <h1>Front End</h1>
+                <p id="subtitle">Linguagens e criação da interface</p>
+            </div>
+        </div>
+    </section>
+<!--------------- INTRO --------------->
+    <section class="container">
+        <h2>HTML</h2>
+        <p>Significa HiperText Markup Language (Linguagem de Marcação de Hipertexto, em português). Isso porque o HTML não chega a ser uma linguagem de programação, mas sim de marcação. Ele é o componente básico da web e nos permite apenas inserir o conteúdo e marcar o que é cada coisa (para que o browser entenda e exiba depois), estabelecendo, assim, a estrutura básica de um website.</p>
+        <p>Para fazer um HTML é só criar um novo arquivo no seu computador com o nome que você quiser e a extensão <code>.html</code> — tenha certeza de que o nome do arquivo tem a extensão <code>.html</code>, pois é assim que ele será reconhecido pelo browser como HTML! — E, então, você deve abri-lo no seu ambiente de desenvolvimento e começar a escrever os códigos. (Também tem como criar pastas e arquivos pelo próprio ambiente, se preferir).
+        <p>Bom, o arquivo HTML é, basicamente, uma série de tags (códigos que definem toda a estrutura da página) compostas por abertura e fechamento, como <code>&lt;tag&gt;</code> e <code>&lt;/tag&gt;</code>. Há também tags de estrutura única, como a tag <code>&lt;br&gt;</code> que realiza um break ou quebra de linha.</p>
+        <p>Digamos que você queira escrever um parágrafo. Chamamos, então, a tag <code>&lt;p&gt;</code>, escrevemos o parágrafo e fechamos a tag com <code>&lt;/p&gt;</code> 👇</p>
+
+        <pre><code>&lt;p&gt;Eu sou um parágrafo.&lt;/p&gt;</code></pre>
+
+        <p>Dessa forma, basta salvar o código no ambiente de desenvolvimento (Ctrl + S) e abrir o arquivo no seu navegador para ver o parágrafo escrito na tela. Você deve repetir esse processo sempre que fizer atualizações no código (inclusive em outros como CSS, JS, PHP, etc), mas em vez de reabrir o arquivo, apenas recarregue a página!</p>
+        <div class="fundo">
+            <h2  class="sem-espaco">Sintaxes</h2>
+            <p>As regras ou jeitos de escrever em cada linguagem são chamadas de sintaxe (cada linguagem tem a sua). </p>
+            <p> Por exemplo, acabamos de ver algumas regrinhas do HTML: a abertura e fechamento de tags e o p para indicar parágrafo.</p>
+        </div>
+        <h2>CSS</h2>
+        <p>Cascading Style Sheets (ou Folha de Estilo em Cascatas) é uma "folha de estilo" composta por “camadas” utilizada para, literalmente, dar estilo (cores, fontes, bordas, tamanhos...) a uma página web que antes era só HTML, deixando-a mais atraente.</p>
+        <p>O CSS tem uma sintaxe simples: é só "chamar" o elemento HTML, abrir chaves ({) para limitar o bloco onde você irá escrever os estilos, chamar as propriedades de estilo que você quiser e depois seus respectivos valores (separando a propriedade do valor por dois pontos (:)), separar cada declaração de estilo com ponto e vírgula (;) e, finalmente, fechar chaves (}).</p>
+        <p>As propriedades de estilo são uma série de palavras em inglês que especificam algo, como: height (altura), width (largura), background-color (cor de fundo), color (cor — da fonte, apenas), font-family (uma lista de fontes que podem ser usadas), font-size (tamanho da fonte), border-radius (arredondamento da borda), e outras.</p>
+        <p>Há também diferentes jeitos de chamar cores, como: pelo nome (por exemplo: pink), pelo hexadecimal (#FFC0CB) ou usando o rgb (que significa quantidade de red, quantidade de green, quantidade de blue — (255, 192, 203)). Pesquise uma "tabela de cores css", é muito útil!</p>
+        <p>Bom, para usar o CSS você pode declarar a tag <code>&lt;style&gt;</code> no head do HTML e, então, aplicar todo o estilo desejado — este é o CSS interno — ou é possível, em vez de colocar a formatação dentro do arquivo HTML, criar um link para um arquivo CSS separado que contém os estilos — este é o CSS externo. O link você adiciona no lugar da tag <code>&lt;style&gt;</code> e o arquivo você cria com a extensão <code>.css</code> (salve-o na mesma pasta onde está o HTML — na verdade, faça isso com todos os arquivos externos e imagens usados no mesmo HTML) 👇</p> 
+
+        <pre><code>&lt;link href="nome-do-arquivo.css" rel="stylesheet"&gt;</code></pre>
+
+        <p>Vamos fazer um exemplo chamando o parágrafo e aumentando o tamanho do texto, colocando um fundo preto, uma fonte branca e arredondando a borda 👇</p>
+
+        <pre><code>p {
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+}</code></pre> 
+
+        <p>Além de chamar o elemento, você pode dar um nome específico para ele usando classe (que pode ser dada para mais de um elemento, assim, você formata vários de uma vez) ou id (que é um  identificador exclusivo, para apenas um elemento). Assim, use . ou # para chamar a classe e o id, respectivamente, no CSS.</p>
+        <h2>JavaScript</h2>
+        <p>JavaScript é uma linguagem de programação que permite a você adicionar interatividade e comportamento dinâmico à elementos com HTML e CSS. Seu conteúdo também é gerado no navegador do cliente.</p>
+        <p>Toda vez que uma página web faz mais do que simplesmente mostrar a você informação estática, mostrando mapas interativos ou gráficos 2D/3D animados ou botões que realizam alguma função, você pode apostar que o JS provavelmente está envolvido.</p>
+        <p>Vamos a um exemplo: criaremos um simples bloco de texto com HTML (para dar estrutura) 👇</p>
+
+        <pre><code>&lt;p id="jogador"&gt;JOGADOR(A) 1: TOM&lt;/p&gt;</code></pre>
+            
+        <p>Adicionaremos um pouco de CSS 👇</p>
+        
+        <pre><code>#jogador {
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 2px solid #454461;
+  border-radius: 10px;
+  padding: 3px 10px;
+  cursor: pointer;
+}</code></pre>
+
+        <p>E finalmente, adicionaremos JavaScript 👇</p>
+
+        <pre><code><span class="color-purple">// isto é um comentário em JavaScript</span>
+
+<span class="color-purple">/* isto é um comentário longo
+   de múltiplas linhas
+*/</span>
+
+<span class="color-purple">/* comentários são ignorados pelo navegador
+   mas são muito úteis para dar instruções aos seus colegas desenvolvedores sobre como o código funciona 
+   e para você mesmo(a), caso tenha que voltar ao código muito tempo depois e não se lembre do que fez
+*/</span>
+
+var p = document.getElementById('jogador'); <span class="color-purple">// aqui, estamos chamando o documento e pegando um elemento específico dele usando o id</span>
+
+p.addEventListener('click', atualizarNome); <span class="color-purple">// o listener vai ficar de olho, esperando pelo evento click, para que uma função seja executada assim que ele acontecer</span>
+
+function atualizarNome() {
+  var nome = prompt('Insira um novo nome');
+  p.textContent = 'Jogador(a) 1: ' + nome;
+}</code></pre>
+
+        <p id="jogador">JOGADOR(A) 1: TOM</p>
+            
+        <p>↑ Experimente clicar no botão acima para ver o que acontece! ↑</p>
+        <br>  
+        <p>Bom, a linguagem JavaScript permite a você fazer coisas como:</p>
+        <p  class="texto-junto">• Armazenar conteúdo útil em variáveis (var). Elas são simplesmente espaços para você guardar algo. Por exemplo, nós pedimos que um novo nome fosse inserido e armazenamos o nome em uma variável chamada nome.</p>
+        <p  class="texto-junto">• Operações com pedaços de texto (conhecidos como "strings" em programação). No exemplo, nós pegamos a string "Jogador(a) 1: " e concatenamos (juntamos) com a variável nome para criar o texto completo "Jogador(a) 1: Tom".</p>
+        <p  class="texto-junto">• Executar o código em resposta a determinados eventos. Nós usamos o click no nosso exemplo para que quando clicassem no botão, rodasse o código que atualiza o texto.</p>
+        <p>• E muito mais!</p>
+        <p>O JS é inserido na página de maneira similar ao CSS. Enquanto o CSS usa o elemento <code>&lt;link&gt;</code> para aplicar folhas de estilo externas e o elemento <code>&lt;style&gt;</code> para aplicar folhas de estilo internas, o JavaScript só precisa do código <code>&lt;script&gt;</code> para ser aplicado internamente no HTML (adicione-o antes da tag de fechamento  <code>&lt;/body&gt;</code>). Assim 👇
+        <pre><code>&lt;script&gt;
+            
+  <span class=color-purple>// O JavaScript fica aqui</span>
+            
+&lt;/script&gt;</code></pre>
+            
+        <p>E se quisermos colocar nosso JavaScript em um arquivo externo, é só criar um novo arquivo com a extensão <code>.js</code> e, no seu ambiente de desenvolvimento, adicionar o seu script. E, claro, para linkar esse script com o HTML, usamos a tag a seguir antes do fechamento do body 👇</p>
+            
+            <pre><code>&lt;script type="text/javascript" src="nome-do-arquivo.js"&gt;&lt;/script&gt;</code></pre>
+            
+            <p>Ter esses arquivos externos é geralmente uma coisa boa em termos de organização de código, e faz com que seja possível reutilizar o código em múltiplos arquivos HTML. Além disso, o HTML fica mais legível sem grandes pedaços de script ou style no meio dele.</p>
+    </section>
+<!--------------- EXEMPLO --------------->
+    <section class="container">
+        <h2>Exemplo</h2>
+        <p>Faremos uma calculadora que funciona de verdade com HTML, CSS e JS internos 👇</p>
+        <pre><code><span class="color-purple">&lt;!-- isto é um comentário em HTML --&gt;</span>
+
+&lt;!DOCTYPE html&gt; <span class="color-purple">&lt;!-- sempre declaramos que o documento é um HTML --&gt;</span>
+&lt;html lang="pt-br"&gt; 
+&lt;head&gt; <span class="color-purple">&lt;!-- significa cabeçalho; tudo o que está aqui dentro são tags automáticas que vêm quando iniciamos o HTML --&gt;</span>
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Calculadora&lt;/title&gt; <span class="color-purple">&lt;!-- é o título que vai aparecer na guia do navegador --&gt;</span>
+  &lt;style&gt; <span class="color-purple">&lt;!-- aqui começa o CSS --&gt;</span>
+
+  <span class="color-purple">/* isto é um comentário em CSS */</span>
+  
+    * { <span class="color-purple">/* * = tudo */</span>
+      margin: 0;
+      padding: 0; <span class="color-purple">/* a propriedade de estilo padding define a distância entre o conteúdo do elemento e suas bordas */</span>
+    }
+    .fundo {
+      background-image: linear-gradient(to right, #dd6b01, #fa1693); <span class="color-purple">/* linear-gradient cria degradês de duas ou mais cores */</span>
+      height: 100vh;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    .calculadora {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%); <span class="color-purple">/* translate reposiciona um elemento na direção horizontal e/ou vertical */</span>
+      border-radius: 15px;
+      padding: 15px;
+    }
+     .botao {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      cursor: pointer; <span class="color-purple">/* cursor é quando o ponteiro do mouse está sobre o elemento e pointer faz aparecer a mãozinha ao invés da seta */</span>
+      margin: 3px;
+      background-color: rgb(36, 36, 36);
+      border: none;
+      color: #fff;
+    }
+    .botao:hover { <span class="color-purple">/* hover aplica um estilo diferente quando a seta do mouse está em cima do elemento */</span>
+      background-color: black;
+    }
+    #resultado {
+      background-color: white;
+      width: 207px;
+      height: 30px;
+      margin: 5px;
+      font-size: 25px;
+      color: black;
+      text-align: right;
+      padding: 5px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt; <span class="color-purple">&lt;!-- significa corpo; aqui começa o conteúdo do site de fato --&gt;</span>
+  &lt;div class="fundo"&gt; <span class="color-purple">&lt;!-- div é uma divisão ou container de conteúdos para fins de estilo --&gt;</span>
+    &lt;div class="calculadora"&gt;
+      &lt;h1&gt;Calculadora&lt;/h1&gt; <span class="color-purple">&lt;!-- heading ou título principal, o mais importante --&gt;</span>
+      &lt;p id="resultado"&gt;&lt;/p&gt;
+      &lt;table&gt; <span class="color-purple">&lt;!-- tabela --&gt;</span>
+        &lt;tr&gt; <span class="color-purple">&lt;!-- table row ou linha da tabela --&gt;</span>
+          &lt;td&gt;&lt;button class="botao" onclick="clean()"&gt;C&lt;/button&gt;&lt;/td&gt; <span class="color-purple">&lt;!-- td = table data ou célula da tabela --&gt;</span>
+          &lt;td&gt;&lt;button class="botao" onclick="back()"&gt;<&lt;/button&gt;&lt;/td&gt; <span class="color-purple">&lt;!-- onclick serve para que aconteça uma ação quando o usuário clicar em algo --&gt;</span>
+          &lt;td&gt;&lt;button class="botao" onclick="insert('/')"&gt;/&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('*')"&gt;X&lt;/button&gt;&lt;td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('7')"&gt;7&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('8')"&gt;8&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('9')"&gt;9&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('-')"&gt;-&lt;/button&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('4')"&gt;4&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('5')"&gt;5&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('6')"&gt;6&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('+')"&gt;+&lt;/button&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('1')"&gt;1&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('2')"&gt;2&lt;/button&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;button class="botao" onclick="insert('3')"&gt;3&lt;/button&gt;&lt;/td&gt;
+          &lt;td rowspan="2"&gt;&lt;button class="botao" style="height: 106px;" onclick="calcular()"&gt;=&lt;/button&gt;&lt;/td&gt; <span class="color-purple">&lt;!-- rowspan expande ou mescla duas ou mais linhas da célula --&gt;</span>
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td colspan="2"&gt;&lt;button class="botao" style="width: 106px;" onclick="insert('0')"&gt;0&lt;/button&gt;&lt;/td&gt; <span class="color-purple">&lt;!-- colspan expande ou mescla duas ou mais colunas da tabela --&gt;</span>
+          &lt;td&gt;&lt;button class="botao" onclick="insert('.')"&gt;.&lt;/button&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt; <span class="color-purple">&lt;!-- aqui começa o JavaScript --&gt;</span>
+    function insert(num) {
+      var numero = document.getElementById('resultado').innerHTML;
+      document.getElementById('resultado').innerHTML = numero + num;
+    }
+
+    function clean(){
+      document.getElementById('resultado').innerHTML = "";
+    }
+
+    function back() {
+      var resultado = document.getElementById('resultado').innerHTML;
+      document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1); 
+      <span class="color-purple">/* substring = só uma parte; no caso, desde o 0 que é o primeiro caractere 
+         (pois a contagem começa no 0, 1, 2..), até o final do comprimento do 
+         que está aparecendo, mas tirando 1 
+      */</span>
+    }
+
+    function calcular() {
+      var resultado = document.getElementById('resultado').innerHTML;
+      document.getElementById('resultado').innerHTML = eval(resultado);
+      <span class="color-purple">/* eval é uma função que  já existe e já vem pronta, ela interpreta as 
+         contas que estão no meio dos números e devolve o resultado 
+         automaticamente 
+      */</span>
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p>O resultado:</p>
+        <img class="calculadora-img" src="images/calcu-ex.png"/>
+        <figcaption class="">Se você fez a calculadora também experimente interagir, clicar nos botões e inserir cálculos para ela fazer!</figcaption>
+    </section>
+
+
+    <script>
+        var p = document.getElementById('jogador');
+        p.addEventListener('click', atualizarNome);
+        function atualizarNome( ) {
+            var nome = prompt('Insira um novo nome');
+            p.textContent = 'Jogador(a) 1: ' + nome;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--------------- CAPA --------------->
+    <section id="header">
+        <header id="menu">
+            <h2 id="menuText">Menu</h2>
+            <nav>
+                <ul id="list">
+                    <li><a href="index.html">Intro</a></li>
+                    <li><a href="front.html">Front End</a></li>
+                    <li><a href="back.html">Back End</a></li>
+                    <li><a href="feedback.html" id="active">Feedback</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+<!--------------- FORM --------------->
+    <div class="box">
+        <form action="enviado.php" method="POST">
+            <h2>Formulário de Feedback</h2>
+            <div class="column">
+                <div class="inputBox" id="right">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="label-input">Nome e Sobrenome</label>
+                </div>
+                <div class="inputBox" id="left">
+                    <input type="number" name="idade" id="idade" class="inputUser" required>
+                    <label for="idade" class="label-input">Idade</label>
+                </div>
+            </div>
+            <br><br>
+            <p>Sexo:</p>
+            <input type="radio" name="sexo" id="sexo" value="F" required>
+            <label for="sexo" class="inputRadio">Feminino</label>
+            <input type="radio" name="sexo" id="sexo" value="M" required>
+            <label for="sexo" class="inputRadio">Masculino</label>
+            <input type="radio" name="sexo" id="sexo" value="O" required>
+            <label for="sexo" class="inputRadio">Outro</label>
+            <br><br><br>
+            <p>Você já tinha conhecimento do assunto?</p>
+            <input type="radio" name="s-n" id="s-n" value="Sim" required>
+            <label for="s-n"  class="inputRadio">Sim</label>
+            <input type="radio" name="s-n" id="s-n" value="Não" required>
+            <label for="s-n"  class="inputRadio">Não</label>
+            <br><br><br>
+            <p>Nosso conteúdo foi útil para você?</p>
+            <input type="radio" name="y-n" id="y-n" value="Sim" required>
+            <label for="y-n"  class="inputRadio">Sim</label>
+            <input type="radio" name="y-n" id="y-n" value="Não" required>
+            <label for="y-n"  class="inputRadio">Não</label>
+            <br><br><br>
+            <p>Avalie!</p>
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1" required/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2" required/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3" required/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4" required/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5" required/>
+            </div>
+            <br><br><br>
+            <div class="inputBox">
+                <input type="text" name="opinião" id="opinião" class="inputUser" required>
+                <label for="opinião" class="label-input">Deixe um comentário aqui!</label>
+            </div>
+            <br><br>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>

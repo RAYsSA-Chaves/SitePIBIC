@@ -1,0 +1,157 @@
+/* ESTILIZAÇÃO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+}
+body{
+    background: #1a192c;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+.container {
+    margin: 0 10% 0 10%;
+}
+h2 {
+    font-size: 35px;
+    letter-spacing: 2px;
+    padding: 80px 0 40px 0;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+code {
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    color: #1a192c;
+    font-size: 16px;
+}
+pre {
+    display: block;
+    background-color: #eee;
+    padding: 20px;
+    border-left: 7px solid #444358;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    max-width: 97%;
+    overflow: auto;
+}
+span {
+    font-family: courier, monospace;
+    font-size: 16px;
+    color: #1a192c;
+}
+.roxo {
+    color: #545369;
+    font-size: 25px;
+}
+
+/* ESTILIZAÇÃO DA CAPA */
+#header {
+    width: 100%;
+    min-height: 55vh;
+    background-color: #232238;
+    margin-bottom: 50px;
+}
+#menu {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 10%;
+}
+#menuText {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0 0 0 0;
+}
+#list {
+    display: flex;
+    list-style: none;
+}
+#list a {
+    display: block;
+    padding: 10px;
+    margin-left: 50px;
+}
+a:hover,
+a#active {
+    background: white;
+    color: #232238;
+    border-radius: 20px;
+}
+#subtitle {
+    font-size: 20px;
+    margin-top: 20px;
+}
+#cover-circles {
+    width: 350px;
+    height: 270px;
+    background: url("images/circles1.png") no-repeat;
+    position: relative;
+    margin: 5% 0 0 46%;
+}
+#subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+}
+#cover-text {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 75px;
+    right: 120px;
+}
+
+/* ESTILIZAÇÃO DA INTRO */
+.fundo {
+    background-color: #27263b;
+    padding: 4%;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.5);
+    width: 30%;
+}
+.sem-espaco {
+    padding-top: 0;
+}
+#jogador {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    border: 2px solid #454461;
+    background: #636181;
+    border-radius: 10px;
+    padding: 3px 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.texto-junto {
+    margin-bottom: 5px;
+}
+.color-purple {
+    color: rgb(102, 7, 165);
+}
+
+/* ESTILIZAÇÃO DO EXEMPLO */
+.calculadora-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+figcaption {
+    margin-top: 15px;
+    margin-bottom: 70px;;
+}

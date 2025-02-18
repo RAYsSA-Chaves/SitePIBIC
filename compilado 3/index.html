@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--------------- CAPA --------------->
+    <section id="header">
+        <header id="menu">
+            <h2 id="menuText">Menu</h2>
+            <nav>
+                <ul id="list">
+                    <li><a href="index.html" id="active">Intro</a></li>
+                    <li><a href="front.html">Front End</a></li>
+                    <li><a href="back.html">Back End</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container" id="content1">
+            <h1 id="tittle">Desenvolvimento Web</h1>
+            <p id="subtitle">Um pouco sobre Front e Back End.</p>
+            <a href="#section2" id="know_more">Saiba Mais</a>
+            <img id="imgCover" src="images/coverImg.png"/>
+        </div>
+    </section>
+<!--------------- CONTEXTO --------------->
+    <section class="container" id="section2">
+        <div class="bg_circle">
+            <h1 id="plus_circle">Contextualizando</h1>
+        </div>
+        <h2>Internet</h2>
+        <p>Quando você conecta dois computadores, você tem uma rede (network). Se um amigo seu conecta outros dois computadores, ele cria outra rede (network). Se vocês concordam em funcionar sob as mesmas regras, vocês podem conectar ambas as redes. Duas ou mais redes conectadas representam uma internetwork ou Internet. E como cada vez mais computadores e redes do mundo todo se conectam, a Internet é uma rede de conexões globais.<br><br>Ou seja, a Internet não possui dono, é algo que se fez.</p>
+        <h2>Cliente-Servidor</h2>
+        <p>Como a rede global foi se tornando maior, surgiu a necessidade de dedicar alguns computadores para entregar dados à essa rede (Servidores), enquanto os demais acessariam estes dados (Clientes).<br><br>Existem vários tipos de servidores, como: servidor de arquivos, email, web, imagens... Por exemplo, para visualizar uma página no Chrome, você utiliza o servidor web que é responsável pelo armazenamento das páginas de um site.<br><br>Mais especificamente, para conseguir abrir páginas web, você utiliza um navegador; portanto, o navegador é o cliente que vai solicitar as páginas, o servidor é quem vai disponibilizá-las para você e essa rede (do computador com o servidor)  é chamada do tipo Cliente-Servidor.</p>
+        <h2>Navegador ou Browser</h2>
+        <p>Usamos um browser para navegar por páginas web porque ele consegue interpretar os códigos através dos quais essas páginas são feitas. Isso quer dizer que ele não apenas usa os protocolos HTTP ou HTTPS para fazer a requisição de uma página para um servidor da Internet e a receber, mas também lê os códigos que escrevemos e os transforma na página propriamente dita (como esta que você está vendo agora), montando tudo em forma de site para ficar mais visual para nós, seres humanos. Assim, nós podemos apenas "curtir a navegação" pelas páginas prontas.<br><br>Google Chrome, Safari, Firefox e Microsoft Edge, por exemplo, são navegadores.</p>
+        <h2>HTTP e HTTPS</h2>
+        <div id="column_HTTP">
+            <div id="left_HTTP">
+                <h2 class="column-subtitle">HTTP</h2>
+                <p>O Hyper Text Transfer Protocol, em português, significa Protocolo de Transferência de Hipertexto. Ele é a regrinha que permite a comunicação e transferência de dados entre servidores e computadores. É a base para o funcionamento da "parte palpável" da experiência de navegar pela Internet chamada World Wide Web.<br><br>Basicamente, o usuário acessa ou digita a URL de um site, o navegador cria uma solicitação HTTP e a envia para o servidor que envia os arquivos associados, através do HTTP também. E os arquivos, por sua vez, são folhas de HTML, CSS, JavaScript e outros códigos (que serão interpretados pelo navegador para gerar os sites).<br><br><br></p>
+            </div>
+            <div id="right_HTTP">
+                <h2 class="column-subtitle">HTTPS</h2>
+                <p>Ao contrário do que muitos pensam, HTTPS não é o oposto do HTTP. Ele só tem como diferencial ser mais avançado e seguro (é literalmente isso o que a sigla quer dizer: Hyper Text Transfer Protocol Secure - Protocolo de Transferência de Hipertexto Seguro). E essa segurança é porque ele oferece uma conexão criptografada entre o servidor e o navegador, assim, nada do que o usuário faz durante a navegação pelo site pode ser visto por outros.</p>
+            </div>
+        </div>
+        <img id="http-img" src="images/http.png"/>
+        <img id="https-img" src="images/https.png"/>
+        <h2>WWW</h2>
+        <p>A World Wide Web ou apenas Web, pode ser traduzida como teia mundial. Ela é nada mais do que o conjunto de conteúdos em formato de hipertexto (hypertext) que chegam até o seu navegador via Internet.<br><br>Esse tal de hipertexto é um conteúdo que contém hiperlinks (ou apenas links) que te levam a outra página se você clicar neles, e não há uma ordem de leitura, pois você escolhe onde quer clicar.<br><br>Foi em 1989 que a Internet começou a receber essas características que conhecemos hoje, ou seja, que a WWW foi criada por seu pai, Tim Berners-Lee. A partir daí, com o avanço das tecnologias de Internet, a web também pôde se desenvolver, aumentando significativamente a quantidade de conteúdo disponível e a interação entre usuários e páginas.</p>
+        <h2>URL</h2>
+        <p>O link que pesquisamos ou clicamos no browser e que nos leva para um site se chama URL (Uniform Resource Locator ou Localizador Uniforme de Recursos). Uma URL válida possui o endereço completo do site, por exemplo: https://www.youtube.com.<br><br>O nome do site (que usamos na maioria das vezes em vez de escrever uma URL inteira) é o domínio, e ele também faz parte da URL. Considerando a URL de exemplo acima, o domínio seria: YouTube.com.<p>
+        <h2>Resumão ilustrado 👇</h2>
+        <img id="resumo-img" src="images/browserFunction.png"/>
+    </section>
+<!--------------- FRONT E BACK --------------->
+    <section class="container">
+        <div class="circles2">
+            <h1 id="plus_circles">Front End e Back End</h1>
+        </div>
+        <figure>
+            <img id="front-backImg" src="images/front-back.png"/>
+            <figcaption>Se você olhar seu computador ou laptop pela lateral, poderá entender o desenvolvimento front end e back end ao mesmo tempo!</figcaption>
+        </figure>
+        <p id="intro-fb">Como já dissemos, para criarmos um website precisamos escrever códigos. E, assim como existem milhares de idiomas no mundo, no ambiente digital existem milhares de linguagens diferentes para escrever códigos (chamadas linguagens de programação) e cada uma delas tem termos, comandos, símbolos e regras próprias.<br><br>Existem, também, dois lados do desenvolvimento web, o Front End e o Back End, e cada um deles possui suas próprias linguagens de programação.</p>
+        <div id="fb-content">
+            <div id="column_fb">
+                <div id="left_front">
+                    <h2 class="column-subtitle">Front End</h2>
+                    <p>É a interface que entra em contato com o usuário; tudo o que a gente vê na tela, como a disposição das coisas, os botões, as cores...<br><br>As linguagens usadas para gerar o front end são HTML, CSS e JavaScript (estrutura, estilo e interatividade, respectivamente). São elas que o servidor entrega para todos os clientes que solicitam a página. E, como é o browser que executa essas linguagens para gerar o site (o servidor apenas as entrega), além de serem linguagens de front end elas também podem ser chamadas de linguagens Client-Side ou linguagens para o lado do cliente.<br><br>Resumindo, o desenvolvedor Front End é quem cuida da parte visual e interativa do site (incluindo a resolução em diferentes tamanhos de telas), fazendo coisas para a web em HTML, CSS e JavaScript.</p>
+                    <a href="front.html" id="know_more2">Saiba Mais</a>
+                </div>
+                <div id="right_back">
+                    <h2 class="column-subtitle">Back End</h2>
+                    <p>É o que está por trás da interface, a parte mais lógica; o usuário não vê e sequer sabe que existe!<br><br>O back end faz a ponte entre os dados que vêm do navegador rumo ao banco de dados e vice-versa, gerando, assim, sites dinâmicos (que têm constantes alterações de conteúdo, mas sem precisar mexer em código).<br><br>Por exemplo, quando você preenche um formulário (que está no front end) suas informações passam pelo back end e são armazenadas no banco de dados. E o caminho inverso também pode acontecer quando você entrar no seu perfil, pois você, cliente, envia uma solicitação para o servidor, a linguagem utilizada para fazer a ponte faz requisições para o banco de dados  (verificando todas as suas informações que você tinha colocado), gera um HTML com essas informações e te envia junto com o estilo e as interações.<br><br>Sendo assim, as linguagens que trabalham com essa ponte rodam do lado do servidor (Server-Side). São algumas delas: PHP, Python, Ruby... até o próprio JavaScript tem uma versão que roda no servidor, o Node.Js.</p>
+                    <a href="back.html" id="know_more2">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--------------- IDEs --------------->
+    <section class="container">
+        <div id="medium-circle">
+            <h1 id="plus-medium">IDEs</h1>
+        </div>
+        <p>Assim como existe o Word para escrevermos, por exemplo, uma redação, também existe um ambiente próprio para escrevermos nossos códigos e ele é chamado de IDE (Integrated Development Environment - Ambiente de Desenvolvimento Integrado). E para usar esse ambiente você tem que baixá-lo.<br><br>Vamos deixar dois exemplos aqui:</p>
+        <div id="column-ide">
+            <div id="left-ide">
+                <img class="ides_img" src="images/vsCode.png">
+                <figcaption class="ide-caption">Visual Studio Code</figcaption>
+            </div>
+            <div>
+                <img class="ides_img" src="images/sublime.png">
+                    <figcaption class="ide-caption">Sublime Text</figcaption>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
